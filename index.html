@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Vincent Tang">
+  <meta name="keywords" content="HackerYou,ProjectOne,Shutter,HTML,CSS,Float">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shutter</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <header class="heroBanner">
+    <div class="fullWrapper clearfix">
+      <div class="logo">
+        <h2><a href="#">Shutter</a></h2>
+      </div>
+      <ul class="noListMenu topMenu desktopMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <nav class="hamburgerMenu">
+        <input id="menuToggle" name="menuToggle" type="checkbox">
+        <ul class="noListMenu topMenu mobileMenu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#"><i class="fab fa-facebook-f"></i>Share on facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i>Share on Instagram</a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i>Share on LinkedIn</a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i>Tweet on Twitter</a></li>
+        </ul>
+        <label for="menuToggle"><i class="fas fa-bars hamburger"></i></label>
+      </nav>
+    </div>
+    <nav class="clearfix">
+      <ul class="noListMenu socialMedia">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </nav>
+    <section class="welcomeTitle">
+      <h1>Welcome to <span class="headerName">Shutter</span></h1>
+    </section>
+  </header>
+  <section>
+    <div class="fullWrapper about">
+      <h2>About Shutter</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus. Vestibulum vitae tincidunt sem, a blandit sem. Quisque interdum orci.</p>
+      <button class="more button">Find out more</button>
+    </div>
+  </section>
+  <section class="imageDivider"> <!-- .imageDivider -->
+    <div class="fullWrapper clearfix">
+      <img src="./assets/imageDivider1.png" alt="Sample Images">
+      <img src="./assets/imageDivider2.png" alt="Sample Images">
+      <img src="./assets/imageDivider3.png" alt="Sample Images">
+    </div>
+  </section> <!-- /.imageDivider-->
+  <section>
+    <div class="fullWrapper midMenu">
+      <nav>
+        <ul class="noListMenu clearfix">
+          <li>
+            <a href="#">
+              <i class="fas fa-images"></i>
+              <h3>Gallery</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-camera"></i>
+              <h3>Photo Tips</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-image"></i>
+              <h3>About</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+              <h3>Contact</h3>  
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <main class="behindTheLens">
+    <div class="fullWrapper">
+      <img src="./assets/behindTheLens.png" alt="Behind the Lens">
+      <h2>Behind the Lens</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus nulla pulvinar tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus nulla pulvinar tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla el. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend.</p>
+      <button class="more button">Find out more</button>
+    </div>
+  </main> <!-- /.behindTheLens -->
+  <article class="blogPost imageRight clearfix"> <!-- Nature & Scenery -->
+    <img class="natureSceneryImg" src="./assets/natureScenery.png" alt="Nature & Scenery">
+    <div class="natureScenery fullWrapper">
+      <h2>Nature & Scenery</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum consequat vestibulum.</p>
+      <button class="more button">Read more</button>
+    </div>
+  </article> <!-- /Nature & Scenery -->
+  <article class="blogPost imageLeft clearfix"> <!-- Candid Photography -->
+    <img class="candidPhotoImg" src="./assets/candidPhotography.png" alt="Candid Photography">
+    <div class="candidPhoto fullWrapper">
+      <h2>Candid Photography</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum consequat vestibulum.</p>
+      <button class="more button">Read more</button>
+    </div>
+  </article> <!-- /Candid Photography -->
+  <footer>
+    <div class="pgFooter">
+      <div class="fullWrapper clearfix">
+        <aside class="desktop leftFooter">
+          <h4>Contact</h4>
+          <ul class="noListMenu">
+            <li>info@email.com</li>
+            <li>123 - 456 - 7890</li>
+            <li>123 some road,</li>
+            <li>Toronto, ON</li>
+          </ul>
+        </aside>
+        <div class="midFooter clearfix">
+          <h4>Stay Updated</h4>
+          <p>Subscribe to our newsletter to stay updated.</p>
+          <form>
+            <input class="subscribeEmail" type="email" placeholder="email address">
+            <button class="subscribe button" type="submit">Subscribe</button>
+          </form>
+        </div>
+        <aside class="mobile leftFooter">
+          <h4>Contact</h4>
+          <ul class="noListMenu">
+            <li>info@email.com</li>
+            <li>123 - 456 - 7890</li>
+            <li>123 some road,</li>
+            <li>Toronto, ON</li>
+          </ul>
+        </aside>
+        <aside class="rightFooter">
+          <h4>Pages</h4>
+          <nav>
+            <ul class="noListMenu pagesMenu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </div>
+    <div class="copyright"> <!-- To revisit if the div is necessary -->
+      <p>Copyright &copy; 2018 HackerYou</p>
+    </div>
+  </footer>
+</body>
+</html>
