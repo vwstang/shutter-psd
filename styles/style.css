@@ -48,10 +48,10 @@ a, .noListMenu a {
 }
 
 a:hover, .noListMenu a:hover {
-  color: var(--accentColour);
+  color: var(--grey);
   /* CSS font border using text-shadow idea credits to Narcelio Filho on stackoverflow.com */
   /* Added white glow behind */
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0px 0px 10px var(--white);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0px 0px 15px var(--white);
 }
 
 .clearfix:after {
@@ -344,11 +344,12 @@ header {
   width: 100%;
 }
 
-.pgFooter p, .pgFooter li {
+.pgFooter p, .pgFooter li, .pgFooter address {
   margin: 3px 0;
   line-height: 29px;
   font-family: 'Lato', sans-serif;
   text-align: center;
+  font-style: normal;
 }
 
 .pgFooter p {
@@ -602,7 +603,7 @@ header {
     text-align: left;
   }
 
-  .leftFooter h4, .leftFooter li {
+  .leftFooter h4, .leftFooter li, .leftFooter address {
     text-align: left;
   }
 
@@ -653,8 +654,13 @@ header {
   }
 
   .midFooter input {
-    width: 75%
+    width: 75%;
+    text-align: left;
   }
+
+  /* .midFooter input::placeholder {
+    text-align: left;
+  } */
 
   .midFooter button {
     width: 25%;
