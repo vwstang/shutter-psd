@@ -1,12 +1,24 @@
+/**** HackerYou Fall 2018 Project1 by Vincent Tang ****/
+
 /*** Global Styles ***/
 
-/* CSS Normalize */
+/** CSS Normalize **/
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 
-/* Border Box */
+/** Clearfix **/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+} 
+
+/** Border Box **/
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-/* Shutter Color Palette Provided */
+/** Shutter Color Palette Provided **/
 :root {
   --accentColour: #e7a8e6;
   --blackShade: #1f2022;
@@ -17,7 +29,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
   --pale-grey: #f0f5ff;
 }
 
-/* Shutter Global Styles */
+/** Shutter Global Styles **/
 * {
   line-height: 1em;
 }
@@ -27,41 +39,36 @@ html {
 }
 
 body {
+  min-width: 320px;
   margin: 0;
   font-size: 1.8rem;
-  min-width: 400px;
 }
 
-.fullWrapper {
+.wrapper {
   padding: 50px 5%;
 }
 
 .noListMenu {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 a, .noListMenu a {
-  text-decoration: none;
   color: var(--white);
+  text-decoration: none;
 }
 
 a:hover, .noListMenu a:hover {
   color: var(--grey);
   /* CSS font border using text-shadow idea credits to Narcelio Filho on stackoverflow.com */
   /* Added white glow behind */
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0px 0px 15px var(--white);
+  text-shadow:  -1px 0 black,
+                0 1px black,
+                1px 0 black,
+                0 -1px black,
+                0px 0px 15px var(--white);
 }
-
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-} 
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -83,8 +90,8 @@ h2 {
 }
 
 h3 {
-  font-size: 3rem;
   padding: 24px 0 50px 0;
+  font-size: 3rem;
 }
 
 h4 {
@@ -99,16 +106,17 @@ i {
 
 p {
   margin: 30px 0;
-  text-align: center;
   font-family: 'Lato', sans-serif;
   line-height: 29px;
+  text-align: center;
 }
 
 img {
   max-width: 100%;
 }
 
-.button {
+/* Master Button Styles */
+.button { 
   display: block;
   height: 3em;
   margin: auto;
@@ -126,61 +134,79 @@ img {
 .more {
   padding: 0 40px;
 }
-/*** END Global Styles ***/
+/* /Master Button Styles */
 
-/*** Hero Banner Section ***/
-.heroBanner .fullWrapper {
-  padding-top: 10px;
-  position: relative;
-}
+/*** /Global Styles ***/
 
-header {
+
+/*** Mobile First Styling ***/
+
+/** Hero Banner Section **/
+
+/* The Background Image */
+.heroBanner {
   min-height: 100vh;
-  background: url(../assets/cover.png) no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: url(../assets/cover.png) center / cover no-repeat;
   color: var(--white);
 }
 
+.heroBanner .wrapper {
+  position: relative;
+  padding-top: 10px;
+}
+
+/* Logo Text */
 .heroBanner .logo {
   float: left;
 }
 
 .heroBanner .logo h2 {
-  font-size: 3rem;
-  line-height: 6.3rem;
   position: relative;
   z-index: 2;
+  line-height: 6.3rem;
+  font-size: 3rem;
 }
 
+/* Menu to be shown on Tablet and Desktop views only */
 .desktopMenu {
   display: none;
 }
 
+/* Hamburger menu to be shown on Mobile view only */
 .hamburgerMenu {
   float: right;
 }
 
+/* Checkbox hack credit to HackerYou PT course notes - hide the checkbox input element as it doesn't need to be visible */
 .hamburgerMenu input#menuToggle {
   display: none;
 }
 
+/* When the checkbox is checked off, this sets the mobileMenu's position to top 0, which, together with the styles set below, shows the menu on top of the hero banner */
+.hamburgerMenu input#menuToggle:checked + .mobileMenu {
+  top: 0;
+}
+
+/* Styling the menu overlay */
 .mobileMenu {
-  background: rgba(0, 0, 0, 0.8);
-  height: 100vh;
+  position: absolute; /* To enable positioning offscreen out of view until hamburger menu is clicked */
+  height: 100vh; /* Set height equal to the viewport height so the overlay rests above the entire hero banner */
   width: 100%;
-  padding: 83px 5% 10px 5%;
-  position: absolute;
-  z-index: 1;
-  top: -100vh;
+  padding: 83px 5% 10px 5%; /* Padding to mimic the wrapper */
+  background: rgba(0, 0, 0, 0.8); /* Translucent overlay */
+  z-index: 1; /* Display on top of other elements */
+  top: -100vh; /* Should sit offscreen at 100% above the current viewport height */
   left: 0;
-  transition: all 0.25s;
+  transition: all 0.25s; /* Applies animation over 0.25 seconds */
 }
 
 .mobileMenu li {
-  /* padding: 20px 0; */
-  line-height: 3em;
   border-top: 1px solid white;
+  line-height: 3em;
+}
+
+.mobileMenu li:last-child {
+  border-bottom: 1px solid white;
 }
 
 .mobileMenu a {
@@ -189,36 +215,26 @@ header {
   padding: 20px 0;
 }
 
-.mobileMenu li:last-child {
-  border-bottom: 1px solid white;
-}
-
-.hamburgerMenu input#menuToggle:checked + .mobileMenu {
-  top: 0;
-}
-
+/* This targets the hamburger font awesome icon */
 .hamburgerMenu i {
   line-height: 6.3rem;
   position: relative;
   z-index: 2;
 }
 
+/* This targets the social media icons within the mobile menu */
 .hamburgerMenu .mobileMenu i {
   font-size: 1.8rem;
   line-height: 1.8rem;
   margin-right: 20px;
 }
 
+/* Social Media links are hidden and put into the mobile menu, so hidden here */
 .socialMedia {
   display: none;
 }
 
-.headerName {
-  font-size: 6rem;
-  text-transform: capitalize;
-  display: block;
-}
-
+/* Welcome to Shutter */
 .welcomeTitle {
   padding: 30vh 0 50px 0;
 }
@@ -232,9 +248,11 @@ header {
 }
 
 .welcomeTitle h1 span {
+  display: block;
   font-family: 'Playfair Display', serif;
   font-size: 10rem;
   line-height: 8rem;
+  text-transform: capitalize;
 }
 /*** /Hero Banner Section ***/
 
@@ -248,37 +266,37 @@ header {
 }
 /*** /About Section ***/
 
-/*** Image Divider Section ***/
-.imageDivider .fullWrapper {
+/*** Gallery Section ***/
+.gallery.wrapper {
   padding: 0;
 }
 
-.imageDivider img {
+.gallery img {
   width: 50%;
   float: left;
 }
 
-.imageDivider img:last-child {
+.gallery img:last-child {
   display: none;
 }
 
 /*** Middle Menu ***/
 .midMenu {
-  background: #1f2022;
+  background: var(--blackShade);
   padding-bottom: 0;
 }
 
 .midMenu ul {
-  color: white;
+  color: var(--white);
 }
 
 .midMenu i {
   width: 100%;
   text-align: center;
 }
-/*** /Middle Menu ***/
+/** /Middle Menu **/
 
-/*** Main Section ***/
+/** Main Section **/
 .behindTheLens img {
   display: block;
   margin: auto;
@@ -291,57 +309,36 @@ header {
 .behindTheLens p {
   text-align: left;
 }
+/** /Main Section **/
 
-/*** /Main Section ***/
-
-/*** Article Section ***/
+/** Blog Post Section **/
 .blogPost {
-  clear: both;
-  background: var(--pale-grey);
-  width: 100%;
   position: relative;
+  width: 100%;
+  background: var(--pale-grey);
 }
 
 .blogPost h2 {
   font-size: 3.2rem;
 }
 
-.blogPost .fullWrapper {
+.blogPost p {
+  width: 100%;
+}
+
+.blogPost .wrapper {
   padding: 50px 12.5%;
 }
 
 .blogPost .more {
   padding: 0 25px;
 }
-/*** /Article Section ***/
+/** /Blog Post Section **/
 
-/*** Page Footer Section ***/
+/** Footer Section **/
 .pgFooter {
   background: var(--black-two);
   color: var(--white);
-}
-
-.desktop {
-  display: none;
-}
-
-.subscribeEmail {
-  height: 3em;
-  width: 100%;
-  margin-bottom: 1.2rem;
-}
-
-.subscribeEmail {
-  text-align: center;
-}
-
-.subscribeEmail::placeholder {
-  color: gray; /* Decided to leave this gray because the black placeholder in the Zeplin design makes it not look like a placeholder */
-  font-family: 'Lato', sans-serif;
-}
-
-.subscribe {
-  width: 100%;
 }
 
 .pgFooter p, .pgFooter li, .pgFooter address {
@@ -356,87 +353,118 @@ header {
   margin-bottom: 11px;
 }
 
+/* Hide the Contact Section (leftFooter) of the desktop view */
+.desktop {
+  display: none;
+}
+
+/* Stay Updated (midFooter) Section */
+.subscribeEmail {
+  margin-bottom: 1.2rem;
+  height: 3em;
+  width: 100%;
+  text-align: center;
+}
+
+.subscribeEmail::placeholder {
+  color: gray; /* Decided to leave this gray because the black placeholder in the Zeplin design makes it not look like a placeholder */
+  font-family: 'Lato', sans-serif;
+}
+
+/* Subscribe Button */
+.subscribe {
+  width: 100%;
+}
+
+/* 2 columns for the Contact and Pages Sections of the mobile footer */
 .leftFooter, .rightFooter {
   float: left;
   width: 50%;
   margin-top: 30px;
 }
 
+/* Pages Section */
 .pagesMenu li {
   text-transform: uppercase;
 }
 
-/*** END Page Footer Section ***/
-
-/*** Copyright Footer Bar ***/
+/* Copyright Footer Bar */
 .copyright {
-  background: black;
+  background: var(--black);
 }
 
 .copyright p {
   margin: auto;
-  background: black;
   color: var(--white);
   opacity: 0.5;
+  line-height: 3em;
   font-weight: bold;
   font-size: 1.8rem;
-  line-height: 3em;
-  /* vertical-align: middle; */
 }
-/*** END Copyright Footer Bar ***/
+/* /Copyright Footer Bar */
+/** /Footer Section **/
 
 /*** Media Queries ***/
+
+/** To catch the overflow of the Welcome To Shutter title when the screen width is too small **/
+@media (max-width: 399px) {
+  .welcomeTitle h1 span {
+    font-size: 9rem; /* Because 10rem is too large for iPhone 4 users. :unamused: */
+    line-height: 8rem;
+  }
+}
+
+/** To catch the overflow of the mobile menu for mobile screens with smaller viewport heights **/
+@media (max-height: 600px) {
+  .mobileMenu a {
+    padding: 10px 0;
+  }
+}
+
+/** Tablet Styles **/
 @media (min-width: 761px) {
+  /** Hero Banner Section **/
   .heroBanner .logo h2 {
     font-size: 4.2rem;
   }
 
+  /* Hide the hamburger menu */
   .hamburgerMenu {
     display: none;
   }
 
+  /* Show the desktop menu and style the elements for the first time */
   .desktopMenu {
     display: block;
     float: right;
   }
 
-  /* .topMenu {
-    background: none;
-    display: block;
-    transition: none;
-    right: 0;
-    width: auto;
-    height: auto;
-    padding: 10px 5%;
-  } */
-
   .desktopMenu li {
     display: inline-block;
     margin: 0 0 0 35px;
     line-height: 63px;
-    /* vertical-align: middle; */
     font-family: 'Lato', sans-serif;
     font-weight: bold;
   }
 
-  .topMenu a {
+  .desktopMenu a {
     color: var(--white);
     text-transform: uppercase;
   }
   
+  /* Show the social media links and style the icons for the first time */
   .socialMedia {
     display: block;
     float: right;
+    margin: 15vh 5% 0 0;
     width: 5%;
-    margin-right: 5%;
     text-align: center;
-    margin-top: 15vh;
   }
 
   .socialMedia a {
     display: block;
-    color: var(--white);
     padding: 8px;
+    color: var(--white);
   }
   
   .socialMedia i {
@@ -448,51 +476,38 @@ header {
   .welcomeTitle {
     padding-top: 20vh;
   }
+  /** /Hero Banner Section **/
 
-  /*** Image Divider ***/
-  .imageDivider .fullWrapper {
+  /** Gallery Section **/
+  .gallery.wrapper {
     padding: 50px 5%;
   }
   
-  .imageDivider img {
-    width: calc((100% - 80px) / 3);
+  .gallery img {
+    width: calc((100% - 80px) / 3); /* Width of each image is 100% of the parent container less gutter margins divided by 3 images */
   }
 
-  .imageDivider img:nth-child(2) {
-    margin: 0 40px;
+  .gallery img:nth-child(2) {
+    margin: 0 40px; /* Add the margin on the middle image */
   }
   
-  .imageDivider img:last-child {
+  /* Show the last image in the gallery and style for the first time */
+  .gallery img:last-child {
     display: block;
     float: left;
   }
 
-  /*** Mid Menu ***/
+  /** Middle Menu **/
   .midMenu {
-    background: url(../assets/midMenuBG.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url(../assets/midMenuBG.png) center / cover no-repeat;
   }
-  
-  /* .midMenu li {
-    display: inline-block;
-    text-align: center;
-    width: calc((100% - (65px * 3) - 5px) / 4);
-    margin-right: 60px;
-    margin-bottom: 50px;
-  }
-
-  .midMenu li:last-child {
-    margin-right: 0;
-  } */
 
   .midMenu li {
     float: left;
-    text-align: center;
-    width: calc((100% - 180px) / 4);
     margin-right: 60px;
     margin-bottom: 50px;
+    width: calc((100% - 60px * 3) / 4); /* Adjust width calc by margin-right of 60px (3 gutters) */
+    text-align: center;
   }
 
   .midMenu li:last-child {
@@ -506,9 +521,9 @@ header {
   .midMenu h3 {
     padding-bottom: 0;
   }
+  /** /Middle Menu **/
 
-
-  /*** Main ***/
+  /** Main Section **/
   .behindTheLens img {
     float: left;
     margin-right: 40px;
@@ -526,17 +541,21 @@ header {
   .behindTheLens button {
     margin: 0 auto 0 0;
   }
+  /** /Main Section **/
 
-  /*** Articles ***/
+  /** Blog Posts Section **/
   .blogPost {
-    width: 50%;
+    width: 50%; /* IMPORTANT FOR THE IMAGE FLOAT BELOW */
   }
 
-  /* Image float idea credits to Jenny and Andy */
+  /** Image background idea credits to Jenny Ngo and Andy Ng **/
+  /* Hide the original images from mobile view */
   .blogPost img {
     display: none;
   }
   
+  /* Styles for blog posts where the image is to the right of the content */
+  /* No float is required as text-align right and margins will do the trick */
   .imageRight h2, .imageRight p {
     text-align: right;
   }
@@ -545,19 +564,18 @@ header {
     margin: 0 0 0 auto;
   }
 
-  .imageRight .fullWrapper::before {
+  /* Creates a pseudo element before the wrapper div that has the height and width of the div so that the size remains the same on resize of the browser window. A background image is set to this pseudo element which covers the entire size of this pseudo div, avoiding having to use object fit on an img element, which currently is still not very supported across various browsers */
+  .imageRight .wrapper::before {
     content: "";
-    background: url(../assets/natureScenery.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
-    right: -100%;
+    right: -100%; /* Pushes the pseudo element entirely to the right of the wrapper div */
+    height: 100%;
+    width: 100%;
+    background: url(../assets/natureScenery.png) bottom / cover no-repeat;
   }
-  
+
+  /* Styles for blog posts where the image is to the right of the content */  
   .imageLeft {
     float: right;
   }
@@ -570,36 +588,38 @@ header {
     margin: 0 auto 0 0;
   }
 
-  .imageLeft .fullWrapper::before {
+  /* Same pseudo element, except left: -100%; instead of right */
+  .imageLeft .wrapper::before {
     content: "";
-    background: url(../assets/candidPhotography.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    height: 100%;
-    width: 100%;
     position: absolute;
     top: 0;
-    right: 100%;
+    left: -100%; /* Pushes the pseudo element entirely to the left of the wrapper div */
+    height: 100%;
+    width: 100%;
+    background: url(../assets/candidPhotography.png) bottom / cover no-repeat;
   }
+  /** /Blog Posts Section **/
 
-  /*** Footer ***/
+  /** Footer Section **/
   footer {
-    clear: both;
+    clear: both; /* Because I was bad and floated the article element before it and didn't put a clearfix on its parent element (body) */
   }
   
+  /* Contact Section */
+  /* Show the desktop version of the Contact Section in the footer and style for the first time */
   .desktop {
     display: block;
     float: left;
   }
 
+  /* Don't show the mobile version of the Contact Section anymore */
   .mobile {
     display: none;
   }
 
   .leftFooter {
-    width: 20%;
     margin-top: 0;
+    width: 20%;
     text-align: left;
   }
 
@@ -607,11 +627,13 @@ header {
     text-align: left;
   }
 
+  /* Stay Updated Section */
   .midFooter {
     float: left;
     width: 60%;
   }
 
+  /* Pages Section */
   .rightFooter {
     float: left;
     width: 20%;
@@ -623,13 +645,16 @@ header {
   }
 }
 
+/** Desktop Styles **/
 @media (min-width: 970px) {
-  .fullWrapper,
-  .imageDivider .fullWrapper,
-  .blogPost .fullWrapper {
+  /* Larger wrapping for desktop view */
+  .wrapper,
+  .gallery.wrapper,
+  .blogPost .wrapper {
     padding: 100px 10%;
   }
 
+  /* Hero Banner Section */
   .heroBanner {
     padding-top: 20px;
   }
@@ -638,17 +663,32 @@ header {
     width: 10%;
     margin-right: 0;
   }
+  /* /Hero Bannery Section */
 
-  /*** About Section ***/
+  /* About Section */
   .about p {
     width: 50%;
     margin: 30px auto;
   }
+  /* /About Section */
 
+  /* Middle Menu */
   .midMenu li {
     margin-bottom: 0;
   }
+  /* Middle Menu */
 
+  /* Blog Post Section */
+  .blogPost p {
+    width: 300px;
+  }
+
+  .blogPost.imageRight p {
+    margin-left: auto;
+  }
+  /* /Blog Post Section */
+
+  /* Footer Section */
   .midFooter input, .midFooter button {
     float: left;
   }
@@ -658,11 +698,8 @@ header {
     text-align: left;
   }
 
-  /* .midFooter input::placeholder {
-    text-align: left;
-  } */
-
   .midFooter button {
     width: 25%;
   }
+  /* /Footer Section */
 }
