@@ -4,7 +4,7 @@ Shutter is a conversion project to convert a design file into a responsive websi
 
 ***
 
-Coded by [Vincent Tang](https://github.com/vwstang)
+Coded by [Vincent Tang](https://github.com/vwstang)\
 Design by [Melissa Carter](https://www.linkedin.com/in/cartermelissa/)
 
 [TANGible Codes 2018](https://tangible.codes)
