@@ -1,6 +1,6 @@
 # Shutter
-### HackerYou Fall 2018 FT Bootcamp PRoject 1
-###### [Vincent Tang](https://tangible.codes)
+### HackerYou Fall 2018 FT Bootcamp Project 1
+##### By [Vincent Tang](https://tangible.codes)
 
 This branch contains my final submission for Project 1 and will not be updated going forward aside from this readme.
 
